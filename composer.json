@@ -1,0 +1,27 @@
+{
+  "name": "rentprep/smartmove-php",
+  "description": "SmartMove PHP Library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "RentPrep",
+      "homepage": "https://www.rentprep.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.3.3",
+    "ext-curl": "*",
+    "ext-json": "*",
+    "ext-mbstring": "*",
+    "guzzlehttp/guzzle": "^6.3"
+  },
+  "require-dev": {
+      "phpunit/phpunit": "~6.0"
+  },
+  "autoload": {
+    "psr-4": { "SmartMove\\" : "src/" }
+  },
+  "autoload-dev": {
+    "psr-4": { "SmartMove\\Tests\\" : "tests/" }
+  }
+}
