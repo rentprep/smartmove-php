@@ -20,7 +20,7 @@ require_once('vendor/autoload.php');
 
 ## Manual Installation
 
-If you do not wish to use Composer, you can download the [latest release](https://github.com/stripe/stripe-php/releases). Then, to use the library, include the `init.php` file.
+If you do not wish to use Composer, you can download the [latest release](https://github.com/rentprep/smartmove-php/releases). Then, to use the library, include the `init.php` file.
 
 ```php
 require_once('/path/to/smartmove-php/init.php');
