@@ -66,9 +66,9 @@ class HttpClient {
     /**
      * Instantiate
      */
-    public function __construct($apiKey, $apiBase, LoggerInterface $logger = null) {
+    public function __construct($apiKey, $baseUri, LoggerInterface $logger = null) {
         $this->apiKey = $apiKey;
-        $this->transport = new Client(['base_uri' => $apiBase]);
+        $this->transport = new Client(['base_uri' => $baseUri]);
         $this->logger = $logger;
     }
 

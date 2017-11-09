@@ -15,17 +15,30 @@ use Psr\Log\LoggerInterface;
  */
 class SmartMove {
 
+    /**
+     * @var string Library version
+     */
     const VERSION = '1.0.0';
+
+    /**
+     * @var string The production URL for the API
+     */
+    const API_ENDPOINT = 'https://w3p.rentprep.com';
+
+    /**
+     * @var string The sandbox URL for the API
+     */
+    const SANDBOX_API_ENDPOINT = 'https://sandbox.rentprep.com';
+
+    /**
+     * @var bool Sandbox mode flag
+     */
+    private static $sandboxMode = false;
 
     /**
      * @var string The API key to be used for requests.
      */
     private static $apiKey;
-
-    /**
-     * @var string The base URL for the API
-     */
-    private static $apiBase = 'https://w3p.rentprep.com';
 
     /**
      * @var string The application specific internal ID of the end user
@@ -43,6 +56,20 @@ class SmartMove {
     private static $http = null;
 
     /**
+     * @var bool $isSandbox
+     */
+    public static function setSandboxMode(bool $isSandbox = true) {
+        self::$sandboxMode = (bool) $isSandbox ?: false;
+    }
+
+    /**
+     * @return string The base API Url
+     */
+    public static function getApiBase() {
+        return self::$sandboxMode ? self::SANDBOX_API_ENDPOINT : self::API_ENDPOINT;
+    }
+
+    /**
      * Sets the API key to be used for requests.
      *
      * @param string $apiKey
@@ -56,22 +83,6 @@ class SmartMove {
      */
     public static function getApiKey() {
         return self::$apiKey;
-    }
-
-    /**
-     * Sets the base API Url to be used for requests.
-     *
-     * @param string $apiUrl
-     */
-    public static function setApiBase($apiBase) {
-        self::$apiBase = $apiBase;
-    }
-
-    /**
-     * @return string The base API Url
-     */
-    public static function getApiBase() {
-        return self::$apiBase;
     }
 
     /**
