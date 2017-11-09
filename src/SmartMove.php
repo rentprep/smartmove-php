@@ -137,21 +137,26 @@ class SmartMove {
     /**
      * POST: Create a new application
      *
+     * @param array $data Data to prefill in the application form
+     * @param mixed $referenceId The unique ID, in your system, of the person who created the application
+     *
      * @return string Url of new application
      */
-    public static function createApplication($referenceId = null, $params = []) {
+    public static function createApplication($data = [], $referenceId = null) {
         $defaults = [
             'Customer' => [
                 'referenceId' => $referenceId ?: self::getReferenceId()
             ],
         ];
-        $params += $defaults;
+        $data += $defaults;
 
-        return self::http()->post('/api/smartmove/application/create', $params);
+        return self::http()->post('/api/smartmove/application/create', $data);
     }
 
     /**
      * GET: List SmartMove Orders
+     *
+     * @param mixed $referenceId The unique ID, in your system, of the person who created the application
      *
      * @return array
      */
@@ -164,6 +169,9 @@ class SmartMove {
     /**
      * GET: Get application details
      *
+     * @param int $applicationId The ID of an application
+     * @param mixed $referenceId The unique ID, in your system, of the person who created the application
+     *
      * @return object
      */
     public static function getApplication($applicationId, $referenceId = null) {
@@ -175,6 +183,9 @@ class SmartMove {
     /**
      * POST: Cancel application
      *
+     * @param int $applicationId The ID of an application
+     * @param mixed $referenceId The unique ID, in your system, of the person who created the application
+     *
      * @return bool
      */
     public static function cancelApplication($applicationId, $referenceId = null) {
@@ -184,6 +195,10 @@ class SmartMove {
 
     /**
      * POST: Add applicate to application
+     *
+     * @param int $applicationId The ID of an application
+     * @param mixed $email A comma seperated string or an array of applicant email addresses
+     * @param mixed $referenceId The unique ID, in your system, of the person who created the application
      *
      * @return bool
      */
@@ -196,6 +211,10 @@ class SmartMove {
     /**
      * POST: Remove an applicant from an application
      *
+     * @param int $applicationId The ID of an application
+     * @param mixed $email A comma seperated string or an array of applicant email addresses
+     * @param mixed $referenceId The unique ID, in your system, of the person who created the application
+     *
      * @return bool
      */
     public static function removeApplicant($applicationId, $email, $referenceId = null) {
@@ -206,6 +225,9 @@ class SmartMove {
 
     /**
      * GET: Get report URL
+     *
+     * @param int $applicationId The ID of an application
+     * @param mixed $referenceId The unique ID, in your system, of the person who created the application
      *
      * @return string Url of application report
      */
