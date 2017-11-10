@@ -18,17 +18,17 @@ class SmartMove {
     /**
      * @var string Library version
      */
-    const VERSION = '1.0.0';
+    const VERSION = '1.0.2';
 
     /**
      * @var string The production URL for the API
      */
-    const API_ENDPOINT = 'https://w3p.rentprep.com';
+    const API_ENDPOINT = 'https://screen.rentprep.com';
 
     /**
      * @var string The sandbox URL for the API
      */
-    const SANDBOX_API_ENDPOINT = 'https://sandbox.rentprep.com';
+    const SANDBOX_API_ENDPOINT = 'https://stage.rentprep.com';
 
     /**
      * @var bool Sandbox mode flag
