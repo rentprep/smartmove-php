@@ -54,7 +54,7 @@ $applications = SmartMove::getApplications();
 
 This is not intended to provide complete documentation of the API. For more
 detail, please refer to the
-[official documentation](#).
+[official documentation](https://stage.rentprep.com/docs/smartmoveapi).
 
 ###Applications
 
