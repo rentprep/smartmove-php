@@ -46,6 +46,7 @@ Optionally, your application's user `$referenceId` can be set once, globally.
 use SmartMove\SmartMove;
 
 SmartMove::setApiKey('XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX');
+SmartMove::setSandboxMode(true); //change to false for production
 SmartMove::setReferenceId('XXX');
 
 $applications = SmartMove::getApplications();
@@ -57,7 +58,7 @@ This is not intended to provide complete documentation of the API. For more
 detail, please refer to the
 [official documentation](https://stage.rentprep.com/docs/smartmoveapi).
 
-###Applications
+##Applications
 
 **Create new application**
 
