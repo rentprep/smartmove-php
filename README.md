@@ -34,6 +34,7 @@ Simple usage looks like:
 use SmartMove\SmartMove;
 
 SmartMove::setApiKey('XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX');
+SmartMove::setSandboxMode(true); //change to false for production
 
 $referenceId = 'XXX'; // The unique ID in your system of the person who created the application
 $applications = SmartMove::getApplications($referenceId);
