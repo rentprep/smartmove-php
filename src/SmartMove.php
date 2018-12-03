@@ -58,7 +58,7 @@ class SmartMove {
     /**
      * @var bool $isSandbox
      */
-    public static function setSandboxMode(bool $isSandbox = true) {
+    public static function setSandboxMode($isSandbox = true) {
         self::$sandboxMode = (bool) $isSandbox ?: false;
     }
 
